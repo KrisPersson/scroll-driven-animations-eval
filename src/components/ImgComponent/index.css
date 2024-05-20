@@ -1,0 +1,21 @@
+.img-component {
+    display: flex;
+    gap: 16px;
+}
+
+.img-text {
+    display: flex;
+    align-items: center;
+    align-self: center;
+}
+
+.img-class {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.img-wrapper {
+    margin-block: 3rem;
+    max-width: 375px;
+}

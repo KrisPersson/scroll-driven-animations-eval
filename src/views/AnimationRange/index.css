@@ -1,0 +1,46 @@
+
+.animation-animation-range {
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: normal;
+}
+
+.animation-animation-range-justified {
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: 300px 50vh;
+}
+
+.animation-animation-range-justified-second {
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: cover 0% cover 50%;
+}
+
+.animation-animation-range-start-end {
+  animation: animate-in linear forwards,
+  animate-out linear forwards;
+  animation-timeline: view();
+  animation-range: entry, exit;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(45% 20% 45% 20%);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+@keyframes animate-in {
+  0% { opacity: 0; transform: translateY(100%); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes animate-out {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-100%); }
+}

@@ -1,0 +1,45 @@
+
+.scrollable-box {
+  width: 375px;
+  height: 400px;
+  border: 1px solid white;
+  border-radius: 5px;
+  border: none;
+  overflow-y: auto;
+  scroll-timeline: --scroll-timeline block;
+  padding-inline: 8px;
+  background: var(--c-primary-text);
+  color: var(--c-primary-background);
+}
+
+.scrollable-box::before, .scrollable-box::after {
+  content: '';
+  display: block;
+  position: sticky;
+  left: 0em; right: 0em;
+  height: 0.75rem;
+  animation: reveal linear both;
+  animation-timeline: --scroll-timeline;
+}
+
+.scrollable-box::before {
+  top: 0;
+  background: radial-gradient(ellipse at top, rgba(66, 66, 66, 0.35), rgba(229, 229, 229, 0.5));
+  animation-range: 0 1em;
+}
+
+.scrollable-box::after {
+  bottom: 0;
+  background: radial-gradient(ellipse at bottom, rgba(66, 66, 66, 0.35), rgba(229, 229, 229, 0.5));
+  animation-direction: reverse;
+  animation-range: calc(100% - 2em) calc(100% - 1em);
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

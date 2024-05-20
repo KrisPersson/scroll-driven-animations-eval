@@ -1,8 +1,28 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  max-width: 1080px;
+  margin: 4rem auto;
+  padding-inline: 32px;
 
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --c-primary-text: rgba(255, 255, 255, 0.87);
+  --c-primary-background: rgba(21, 21, 21, 0.87);
+  --font-main: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  color: var(--c-primary-text);
+  background-color: var(--c-primary-background);
+  font-family: var(--font-main);
+
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+  margin: 0;
 }

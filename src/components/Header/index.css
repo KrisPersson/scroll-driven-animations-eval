@@ -1,0 +1,16 @@
+
+.header-class {
+    padding-bottom: 24px;
+}
+
+.ul-class {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+.link-class {
+    color: var(--c-primary-text);
+}

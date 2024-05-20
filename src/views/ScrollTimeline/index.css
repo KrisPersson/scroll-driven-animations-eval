@@ -1,0 +1,26 @@
+.progress-bar-container {
+    width: 100vw;
+    height: 24px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 3;
+  }
+  
+  .progress-bar {
+    height: inherit;
+    background: red;
+    animation: progress linear;
+    animation-timeline: scroll();
+  }
+  
+  
+  @keyframes progress {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+      background: rgb(0, 162, 0);
+    }
+  }
