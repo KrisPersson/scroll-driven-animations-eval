@@ -1,35 +1,63 @@
 import "./index.css";
 import Page from "../../components/Page/index";
-import ImgComponent from "../../components/ImgComponent/index";
+import CodeSnippet from "../../components/CodeSnippet/index";
 
 export default function ScrollShadows() {
   return (
     <Page
       headline="Scroll-shadows"
-      description="Scroll-shadow kan vara användbart för att indikera att en box är scroll-bar.
+      description="Scroll-shadow kan vara användbart för att indikera att en box är scroll-bar. Här används en 'named timeline', som vi kallar '--scroll-timeline', och som sätts i scroll-containern. Därefter anges '--scroll-timeline' som värde för 'animation-timeline' i de children som ska animeras enligt denna timeline. Detta gör att vi kan bryta oss ur den normala processen där browsern letar efter den högsta scroll-porten och istället väljer den namngivna.
        "
     >
       <div className="scrollable-box">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-        consequatur non ab voluptate nam? Repudiandae veritatis quo, distinctio
-        voluptate commodi culpa earum ex est. Sit, vitae! Minima natus quod
-        iure? Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-        Exercitationem hic tempore officiis molestiae quidem sit delectus culpa
-        est tenetur excepturi maiores nemo, dolorem quam perspiciatis,
-        consequuntur a quod voluptas, vitae non. Iste fugit repellat non rerum
-        sit ratione quidem praesentium exercitationem quis voluptatum temporibus
-        dolores officiis amet quos provident aliquid beatae, vero fuga. Quam
-        asperiores eaque magni saepe! Nulla eius quas sapiente! Ex architecto ea
-        molestias quos vel tenetur aspernatur amet officia. Fuga amet voluptates
-        maxime sit quas maiores possimus! Hic consequatur fugit fuga nisi
-        consectetur sequi suscipit, ducimus repudiandae voluptatibus iusto. Iste
-        voluptatem aspernatur quos ut assumenda dicta temporibus. Nulla eius
-        quas sapiente! Ex architecto ea molestias quos vel tenetur aspernatur
-        amet officia. Fuga amet voluptates maxime sit quas maiores possimus! Hic
-        consequatur fugit fuga nisi consectetur sequi suscipit, ducimus
-        repudiandae voluptatibus iusto. Iste voluptatem aspernatur quos ut
-        assumenda dicta temporibus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam Lorem
+        ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus quasi
+        amet distinctio a officiis at, accusantium, quia tenetur culpa eos nisi
+        explicabo magnam. Quasi mollitia porro enim sequi, consectetur
+        consequatur possimus aperiam doloremque quo, aut illo repellat quisquam
+        eaque laboriosam dolorem deserunt beatae laudantium. Aliquam eos ratione
+        eligendi nam, iusto deleniti delectus facere unde blanditiis, fuga
+        commodi voluptates magnam praesentium dolorum deserunt, nemo ullam totam
+        voluptatum dolorem. Accusamus nisi ea aperiam pariatur eius sed est vel
+        unde, quaerat nesciunt facere deleniti vitae ipsum, repellendus quo
+        voluptas vero. Nostrum, vitae. Obcaecati a aliquid consequuntur labore
+        reiciendis numquam voluptatibus aspernatur, quo est?
       </div>
+      <CodeSnippet
+        code="
+      .scrollable-box {
+        overflow-y: auto;
+        scroll-timeline: --scroll-timeline block;
+      }
+      "
+      />
+      <CodeSnippet
+        code="
+      .scrollable-box::before, .scrollable-box::after {
+        animation: reveal-shadow linear both;
+        animation-timeline: --scroll-timeline;
+      }
+      "
+      />
+      <CodeSnippet
+        code="
+        .scrollable-box::before {
+          top: 0;
+          background: radial-gradient(ellipse at top, rgba(66, 66, 66, 0.99), rgba(229, 229, 229, 0.3));
+          animation-range: 1em 2em;
+      }
+      "
+      />
+      <CodeSnippet
+        code="
+        .scrollable-box::after {
+          bottom: 0;
+          background: radial-gradient(ellipse at bottom, rgba(66, 66, 66, 0.99), rgba(229, 229, 229, 0.3));
+          animation-direction: reverse;
+          animation-range: calc(100% - 2em) calc(100% - 1em);
+        }
+      "
+      />
     </Page>
   );
 }

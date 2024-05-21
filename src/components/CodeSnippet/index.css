@@ -1,0 +1,10 @@
+.code-snippet {
+    margin-block: 3rem;
+    line-height: 2;
+}
+  
+
+.code-snippet-wrapper {
+    background: var(--c-secondary-background);
+    padding: 1rem;
+}

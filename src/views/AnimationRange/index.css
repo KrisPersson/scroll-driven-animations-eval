@@ -8,7 +8,7 @@
 .animation-animation-range-justified {
   animation: reveal linear both;
   animation-timeline: view();
-  animation-range: 300px 50vh;
+  animation-range: 300px 70vh;
 }
 
 .animation-animation-range-justified-second {

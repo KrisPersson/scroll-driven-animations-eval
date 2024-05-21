@@ -93,7 +93,7 @@ export default function AnimationRange() {
       </p>
       <ImgComponent
         imgSrc="02"
-        imgDescription="Denna bild använder view() utan argument, och har animation-range: '300px 50vh'. Bilden anses därför nå 1% i scroll-portens view först 300px EFTER att elementet nåt scroll-portens view. Bilden anses därtill ha nåt 100% efter 50vh."
+        imgDescription="Denna bild använder view() utan argument, och har animation-range: '300px 70vh'. Bilden anses därför nå 1% i scroll-portens view först 300px EFTER att elementet nåt scroll-portens view. Bilden anses därtill ha nåt 100% efter 70vh."
         animationClassName={[
           "animation-animation-range",
           "animation-animation-range-justified",
